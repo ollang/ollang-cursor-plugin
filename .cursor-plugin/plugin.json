@@ -1,0 +1,13 @@
+{
+  "name": "ollang",
+  "version": "1.0.0",
+  "description": "Connect your Ollang workspace to manage localization projects, orders, supported languages and review workflows from Cursor.",
+  "author": { "name": "Ollang Inc.", "email": "support@ollang.com" },
+  "homepage": "https://ollang.com",
+  "repository": "https://github.com/ollang/ollang-cursor-plugin",
+  "license": "MIT",
+  "keywords": ["localization", "translation", "i18n", "subtitles", "dubbing", "mcp"],
+  "logo": "assets/ollang-mark.svg",
+  "skills": "skills/",
+  "mcpServers": "mcp.json"
+}
