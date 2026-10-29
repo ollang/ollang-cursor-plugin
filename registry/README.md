@@ -5,18 +5,21 @@
 is `io.github.ollang/ollang`. This remote-only listing uses the existing OAuth
 service; it does not install or deploy server code.
 
-From the repository root, use the official
+From the repository root, validate with the official
 [mcp-publisher CLI](https://github.com/modelcontextprotocol/registry):
 
 ```sh
 mcp-publisher validate registry/server.json
-mcp-publisher login github
-mcp-publisher publish registry/server.json
 ```
 
-The GitHub account must have permission to publish under the `ollang`
-organization namespace. Complete the CLI's device authorization in a browser.
-Keep credentials outside this repository.
+To publish, manually run the **Publish MCP Registry** GitHub Actions workflow
+on `main`. It uses GitHub OIDC to establish ownership of the `ollang` namespace;
+no long-lived publishing secret is required. It validates metadata before
+publication and does not run automatically on pushes or pull requests.
+
+The interactive `mcp-publisher login github` flow only grants the personal
+namespace and cannot read organization roles. Use the workflow for this listing.
+Keep any local publisher credentials outside this repository.
 
 For updates, increment the registry manifest's version before publishing; an
 existing published version cannot be overwritten. This version is independent
